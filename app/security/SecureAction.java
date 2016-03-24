@@ -1,11 +1,8 @@
 package security;
 
-import cors.CorsAction;
-import model.User;
 import play.libs.F;
 import play.mvc.Http;
 import play.mvc.Result;
-import play.mvc.With;
 
 import java.text.ParseException;
 import java.util.Date;

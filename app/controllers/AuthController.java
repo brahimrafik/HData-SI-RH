@@ -5,8 +5,6 @@ import cors.CorsAction;
 import dao.UnknownUsername;
 import dao.UserDAO;
 import model.User;
-import play.data.DynamicForm;
-import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;

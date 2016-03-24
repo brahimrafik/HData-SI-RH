@@ -1,10 +1,7 @@
 package cors;
 
-import model.User;
-import play.libs.F;
 import play.mvc.Http;
 import play.mvc.Result;
-import security.Auth;
 
 import java.util.concurrent.CompletionStage;
 
