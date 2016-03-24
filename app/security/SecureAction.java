@@ -36,12 +36,12 @@ public class SecureAction extends play.mvc.Action<Secure>{
 
         Date now = new Date();
         if (now.after( jwt.getExpirationDate() ) ) {
-            return F.Promise.pure( unauthorized("expired_date") );
+            return F.Promise.pure( unauthorized("expired_token") );
         }
 
         for(String s : roles){
             if ( jwt.getUser().getRoles().contains(s) ) return delegate.call(ctx);
         }
-        return F.Promise.pure( unauthorized("unauthorized access") );
+        return F.Promise.pure( unauthorized("unauthorized_access") );
     }
 }

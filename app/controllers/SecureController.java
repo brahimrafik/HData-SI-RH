@@ -10,7 +10,7 @@ import security.Secure;
  * Created by root on 23/03/16.
  */
 @With(CorsAction.class)
-@Secure({"superadmin"})
+@Secure({"admin","user"})
 public class SecureController extends Controller {
 
     public Result secure() {

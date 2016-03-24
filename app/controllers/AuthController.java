@@ -1,9 +1,13 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import cors.CorsAction;
 import dao.UnknownUsername;
 import dao.UserDAO;
 import model.User;
+import play.data.DynamicForm;
+import play.data.Form;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
@@ -13,10 +17,19 @@ public class AuthController extends Controller {
 
     //Takes username and password and returns JWT
     @With(CorsAction.class)
-    public Result login(String username,String password) {
+    public Result login() {
+        JsonNode json = Json.parse(request().body().asText());
+        String username = null;
+        String password = null;
+        try {
+            username = json.findPath("username").asText();
+            password = json.findPath("password").asText();
+        }catch(NullPointerException e){
+            return unauthorized("wrong_format");
+        }
         User user = null;
         try {
-            user = new UserDAO().getByUsername(username);
+            user = new UserDAO().getByUsername( username );
         } catch (UnknownUsername unknownUsername) {
             return unauthorized("unknown_username");
         }
