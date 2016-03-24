@@ -39,7 +39,7 @@ public class Auth {
         JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
                 .subject("user")
                 .issuer("Finaxys Academy")
-                .expirationTime(new Date(new Date().getTime() + 24 * 60 * 60 * 1000))
+                .expirationTime(new Date(new Date().getTime() + 48 * 60 * 60 * 1000))
                 .claim("user",user)
                 .build();
 

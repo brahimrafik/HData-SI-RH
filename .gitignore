@@ -49,4 +49,4 @@ target/*
 project/target/*
 project/project/*
 .idea
-logs/*
+logs
