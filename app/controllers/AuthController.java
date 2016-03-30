@@ -17,7 +17,6 @@ public class AuthController extends Controller {
     //Takes username and password and returns JWT
     @With(CorsAction.class)
     public Result login() {
-        /*System.out.println("#####" + request().body().asText());
         JsonNode json = Json.parse(request().body().asText());
         String username = null;
         String password = null;
@@ -35,8 +34,7 @@ public class AuthController extends Controller {
         }
         Auth auth = new Auth();
         if( auth.authentify(user,password) == false ) return unauthorized("wrong_credentials");
-        else return ok(auth.generateJWT(user));*/
-        return ok("ok");
+        else return ok(auth.generateJWT(user));
     }
 
 }
