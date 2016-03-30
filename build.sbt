@@ -1,6 +1,6 @@
 name := """HData-SI-RH"""
 
-version := "HData-${env.PIPELINE_VERSION}"
+version := ("${env.PIPELINE_VERSION}")
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
