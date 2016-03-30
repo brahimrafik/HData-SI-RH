@@ -1,6 +1,6 @@
-name := """projet_finaxys_academy"""
+name := """HData-SI-RH"""
 
-version := "1.0-SNAPSHOT"
+version := "HData-${env.PIPELINE_VERSION}"
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
