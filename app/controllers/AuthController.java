@@ -1,6 +1,7 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import cors.CorsAction;
 import dao.UnknownUsername;
 import dao.UserDAO;
@@ -16,6 +17,7 @@ public class AuthController extends Controller {
     //Takes username and password and returns JWT
     @With(CorsAction.class)
     public Result login() {
+        /*System.out.println("#####" + request().body().asText());
         JsonNode json = Json.parse(request().body().asText());
         String username = null;
         String password = null;
@@ -33,7 +35,8 @@ public class AuthController extends Controller {
         }
         Auth auth = new Auth();
         if( auth.authentify(user,password) == false ) return unauthorized("wrong_credentials");
-        else return ok(auth.generateJWT(user));
+        else return ok(auth.generateJWT(user));*/
+        return ok("ok");
     }
 
 }

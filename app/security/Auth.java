@@ -28,7 +28,6 @@ public class Auth {
     //Generate JWT using user credentials
     public String generateJWT(User user){
         KeyFactory keyFactory = new KeyFactory();
-        RSAPublicKey publicKey = keyFactory.getPublicKey();
         RSAPrivateKey privateKey = keyFactory.getPrivateKey();
 
         // Create RSA-signer with the private key
